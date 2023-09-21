@@ -1,8 +1,8 @@
 # CafeProject
 
-# Thành viên:
-Nguyễn Minh Quân
-Giáp Văn Khang
-Bùi Văn Công
+## Thành viên:
+- Nguyễn Minh Quân
+- Giáp Văn Khang
+- Bùi Văn Công
 
-# Báo Cáo Tuần 1:
+### Báo Cáo Tuần 1:
