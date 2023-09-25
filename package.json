@@ -1,13 +1,13 @@
 {
-  "name": "cafeproject",
-  "version": "1.0.0",
-  "description": "- Nguyễn Minh Quân\r - Giáp Văn Khang\r - Bùi Văn Công",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass scss:css -w"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "cafeproject",
+    "version": "1.0.0",
+    "description": "- Nguyễn Minh Quân\r - Giáp Văn Khang\r - Bùi Văn Công",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "sass": "sass scss:assets/css -w"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
