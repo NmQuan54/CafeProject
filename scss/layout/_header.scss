@@ -7,6 +7,10 @@
 
 .header {
     background: var(--header-bg-color);
+
+    @include abstracts.breakpoint(lg) {
+        box-shadow: 0px 20px 60px 10px var(--header-shadow-color);
+    }
 }
 
 .top-bar {
@@ -18,7 +22,7 @@
         padding: 20px 0;
     }
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.breakpoint(md) {
         justify-content: space-between;
         padding: 16px 0;
     }
@@ -84,7 +88,7 @@
     @extend %flexItemsCenter;
 
 
-    @include abstracts.breakpoint(sm) {
+    @include abstracts.breakpoint(md) {
         margin-left: 0;
     }
     
