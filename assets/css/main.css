@@ -1134,6 +1134,7 @@ html.dark {
   --dropdown-arrow-color: brightness(0) saturate(100%) invert(17%) sepia(11%)
       saturate(1085%) hue-rotate(185deg) brightness(98%) contrast(90%);
   --top-menu-border-color: #171c28;
+  --menu-colum-icon-color: brightness(0) saturate(100%) invert(99%) sepia(21%) saturate(350%) hue-rotate(208deg) brightness(100%) contrast(96%);
 }
 @media (max-width: 991.98px) {
   html.dark {
@@ -1200,23 +1201,17 @@ html {
 }
 
 .navbar {
-  margin-left: 144px;
+  margin-left: 129px;
 }
 @media (max-width: 1199.98px) {
   .navbar {
-    margin-left: 50px;
+    margin-left: 28px;
   }
 }
 @media (max-width: 991.98px) {
   .navbar {
     display: none;
   }
-}
-.navbar__item:first-child a {
-  padding-left: 0;
-}
-.navbar__item:last-child a {
-  padding-right: 0;
 }
 .navbar__item:hover .dropdown {
   display: block;
@@ -1324,9 +1319,9 @@ html {
   width: min(1240px, 100%);
 }
 .dropdown__inner {
+  --inner-padding: 30px;
   position: relative;
-  max-height: max(582px, 100vh - 158px);
-  padding: 30px;
+  padding: var(--inner-padding);
   border-radius: 20px;
   background: var(--dropdown-bg-color);
   box-shadow: 0px 40px 90px 20px var(--dropdown-shadow-color);
@@ -1341,17 +1336,22 @@ html {
 }
 
 .top-menu {
-  height: 100%;
+  --main-column-width: 292px;
+  position: relative;
 }
 .top-menu__main {
-  width: 292px;
-  height: 100%;
+  width: var(--main-column-width);
+  max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
   border-right: 1px solid var(--top-menu-border-color);
+  overflow-y: auto;
 }
 
 .menu-column {
   display: flex;
   gap: 0 14px;
+}
+.menu-column + .menu-column {
+  margin-top: var(--inner-padding);
 }
 .menu-column__icon {
   position: relative;
@@ -1374,6 +1374,7 @@ html {
   position: absolute;
   right: 0;
   bottom: 0;
+  filter: var(--menu-colum-icon-color);
 }
 .menu-column__heading {
   margin-top: 4px;
@@ -1384,15 +1385,28 @@ html {
 .menu-column__list {
   margin-top: 19px;
 }
+.menu-column__item:hover .sub-menu {
+  display: grid;
+}
+.menu-column__item:hover > .menu-column__link {
+  color: #0071dc;
+  font-weight: 500;
+}
 .menu-column__link {
   display: block;
   padding: 7px;
   font-size: 1.4rem;
   line-height: 142.857%;
 }
-.menu-column__link:hover {
-  color: #0071DC;
-  font-weight: 500;
+
+.sub-menu {
+  position: absolute;
+  inset: 0 0 0 var(--main-column-width);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--inner-padding);
+  padding-left: var(--inner-padding);
+  overflow-y: auto;
 }
 
 /*# sourceMappingURL=main.css.map */
