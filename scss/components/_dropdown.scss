@@ -4,7 +4,7 @@
     padding-top: 54px;
 
     width: min(1240px, 100%);
-    // display: none;
+    display: none;
 
     &__inner {
         --inner-padding: 30px;
@@ -44,7 +44,7 @@
     gap: 0 14px;
 
     + .menu-column {
-        margin-top: var(--inner-padding);
+        margin-top: 20px;
     }
 
     &__icon {
@@ -61,13 +61,13 @@
     &__icon-1 {
         width: 30px;
         height: 30px;
-        object-fit: cover;
+        object-fit: contain;
     }
 
     &__icon-2 {
         height: 24px;
         width: 24px;
-        object-fit: cover;
+        object-fit: contain;
         position: absolute;
         right: 0;
         bottom: 0;
@@ -86,12 +86,13 @@
     }
 
     &__item {
-        &:hover .sub-menu {
+        &--active .sub-menu {
             display: grid;
         }
     }
 
-    &__item:hover > &__link {
+    &__item:hover > &__link,
+    &__item--active > &__link {
             color: #0071dc;
             font-weight: 500;
     }
@@ -109,7 +110,7 @@
     position: absolute;
     inset: 0 0 0 var(--main-column-width);
 
-    display: grid;
+    display: none;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--inner-padding);
 
