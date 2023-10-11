@@ -29,11 +29,12 @@
 
 .top-menu {
     --main-column-width: 292px;
+    --max-inner-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
     position: relative;
 
     &__main {
         width: var(--main-column-width);
-        max-height: calc(min(582px, 100vh - 158px) - var(--inner-padding) * 2);
+        max-height: var(--max-inner-height);
         border-right: 1px solid var(--top-menu-border-color);
         overflow-y: auto;
     }
@@ -117,4 +118,12 @@
     padding-left: var(--inner-padding);
 
     overflow-y: auto;
+
+    &--not-main{
+        position: initial;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        max-height: var(--max-inner-height);
+        padding-left: 0;
+    }
 }
