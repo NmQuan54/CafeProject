@@ -1,19 +1,3 @@
-// function load(selector, path) {
-//     const cached = localStorage.getItem(path);
-//     if (cached) {
-//         document.querySelector(selector).innerHTML = cached;
-//     }
-
-//     fetch(path)
-//         .then((res) => res.text())
-//         .then((html) => {
-//             if (html !== cached) {
-//                 document.querySelector(selector).innerHTML = html;
-//                 localStorage.setItem(path, html);
-//             }
-//         });
-// }
-
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -130,13 +114,19 @@ function handleActiveMenu() {
             if (!items.length) return;
 
             removeActive(menu);
-            items[0].classList.add(activeClass);
+            if (window.innerWidth > 991) items[0].classList.add(activeClass);
 
             Array.from(items).forEach((item) => {
                 item.onmouseenter = () => {
                     if (window.innerWidth <= 991) return;
                     removeActive(menu);
                     item.classList.add(activeClass);
+                };
+                item.onclick = () => {
+                    if (window.innerWidth > 991) return;
+                    removeActive(menu);
+                    item.classList.add(activeClass);
+                    item.scrollIntoView();
                 };
             });
         });
