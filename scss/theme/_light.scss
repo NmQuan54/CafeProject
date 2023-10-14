@@ -2,24 +2,22 @@
 
 html {
     --text-color: #1a162e;
-    --icon-color: brightness(0) saturate(100%) invert(7%) sepia(39%)
-        saturate(1312%) hue-rotate(215deg) brightness(96%) contrast(95%);
+    --icon-color: brightness(0) saturate(100%) invert(7%) sepia(39%) saturate(1312%) hue-rotate(215deg) brightness(96%)
+        contrast(95%);
 
-    --body-bg: #F6F6F6;
+    --body-bg: #f6f6f6;
     --header-bg-color: #eee;
     --top-act-group-bg-color: #fff;
     --top-act-group-shadow: rgba(237, 237, 246, 0.2);
     --top-act-group-separate: #ededf6;
 
-    @include abstracts.breakpoint(lg) {
+    @include abstracts.screen(lg) {
         --header-bg-color: #fff;
-        --header-shadow-color: rgba(237, 237, 246, 0.20);
+        --header-shadow-color: rgba(237, 237, 246, 0.2);
     }
 
-    // Dropdown 
+    // Dropdown
     --dropdown-bg-color: #fff;
-    --dropdown-shadow-color: rgba(200, 200, 200, 0.40);
-    --top-menu-border-color:  #D2D1D6;
-    
-    
+    --dropdown-shadow-color: rgba(200, 200, 200, 0.4);
+    --top-menu-border-color: #d2d1d6;
 }
