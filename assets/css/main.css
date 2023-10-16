@@ -1269,7 +1269,10 @@ html {
   --filter-btn-color: #6C6C72;
   --filter-btn-bg: #fff;
   --product-card-bg: #fff;
-  --product-card-shadow: rgba(237, 237, 246, 0.20) ;
+  --product-card-shadow: rgba(237, 237, 246, 0.20)
+  //filter form
+  --filter-form-bg: #fff;
+  --filter-form-shadow: rgba(200, 200, 200, 0.40);
 }
 @media (max-width: 991.98px) {
   html {
@@ -1952,6 +1955,19 @@ html {
 }
 .product-card__star {
   margin: 0 6px 0 auto;
+}
+
+.filter-wrap {
+  position: relative;
+}
+
+.filter {
+  position: absolute;
+  border-radius: 20px;
+  right: 0;
+  top: 50px;
+  background: var(--filter-form-bg);
+  filter: drop-shadow(0px 40px 90px var(--filter-form-shadow));
 }
 
 .home__container {
