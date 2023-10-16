@@ -1,10 +1,10 @@
 @use "../abstracts";
+
 *,
 ::before,
 ::after {
     box-sizing: border-box;
 }
-
 
 html {
     font-size: 62.5%;
@@ -12,7 +12,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    font-family: "Gordita", sans-serif;
+    font-family: Gordita, sans-serif;
     color: var(--text-color);
     background: var(--body-bg);
 }
@@ -30,10 +30,23 @@ button {
     cursor: pointer;
 }
 
-a,img,button, input, textarea, select{
+a,
+img,
+button,
+input,
+label,
+textarea,
+select {
+    padding: 0;
     font-family: inherit;
     color: inherit;
+    outline: none;
+    border: none;
     -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    background: transparent;
 }
 
 .icon {
@@ -42,6 +55,7 @@ a,img,button, input, textarea, select{
 
 .container {
     @include abstracts.screen(sm) {
-        padding: 0 20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
     }
 }

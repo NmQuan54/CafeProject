@@ -1,6 +1,11 @@
 .product-card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
     padding: 16px;
     border-radius: 20px;
+
     background: var(--product-card-bg);
     box-shadow: 0px 20px 60px 10px var(--product-card-shadow);
 
@@ -26,9 +31,6 @@
 
     &__title {
         margin-top: 16px;
-        font-size: 1.6rem;
-        font-weight: 500;
-        line-height: 150%; 
     }
 
     &__title,
@@ -40,19 +42,19 @@
     }
 
     &__brand {
-        color: #9E9DA8;
         margin: 16px 0;
+        color: #9e9da8;
         font-size: 1.5rem;
-        font-weight: 400;
         line-height: 146.667%;
     }
 
     &__row {
         display: flex;
         align-items: center;
+        margin-top: auto;
     }
-    
-    &__star{
-        margin:0 6px 0 auto;
+
+    &__star {
+        margin: 0 6px 0 auto;
     }
 }
