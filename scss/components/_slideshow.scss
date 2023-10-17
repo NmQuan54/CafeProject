@@ -1,7 +1,15 @@
 @use "../abstracts";
 
 .slideshow {
+    margin-top: 140px;
     position: relative;
+
+    @include abstracts.screen(lg) {
+        margin-top: 110px;
+    }
+    @include abstracts.screen(md) {
+        margin-top: 100px;
+    }
 
     &__inner {
         display: flex;

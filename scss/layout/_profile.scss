@@ -1,7 +1,17 @@
 $bg-color-theme: #FFFFFF;
-
+@use "../abstracts";
 .profile{
-    margin-top: 30px;
+    position: relative;
+    margin-top: 140px;
+
+
+    @include abstracts.screen(lg) {
+        margin-top: 110px;
+    }
+    @include abstracts.screen(md) {
+        margin-top: 100px;
+    }
+
     display: flex;
     justify-content: space-between;
     &-detail {
