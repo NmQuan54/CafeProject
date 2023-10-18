@@ -11,169 +11,158 @@ loginButton.addEventListener("click", () => {
     container.classList.remove("right-panel-active");
 });
 
-
 // Check Register Error
-const form = document.querySelector('form')
-const username = document.getElementById('username')
-const usernameError = document.querySelector("#username-error")
-const email = document.getElementById('email')
-const emailError = document.querySelector("#email-error")
-const password = document.getElementById('password')
-const passwordError = document.querySelector("#password-error")
-
-// Show input error message
-function showError(input, message) {
-    const formControl = input.parentElement
-    formControl.className = 'form-control error'
-    const small = formControl.querySelector('small')
-    small.innerText = message
-}
-
-// Show success outline
-function showSuccess(input) {
-    const formControl = input.parentElement
-    formControl.className = 'form-control success'
-    const small = formControl.querySelector('small')
-    small.innerText = ''
-}
-
-// Check email is valid
-function checkEmail(email) {
-    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    return emailRegex.test(email);
-}
-
-email.addEventListener("input", function(){
-    if (!checkEmail(email.value)) {
-        emailError.textContent = "*Email is not valid"
-    }else {
-        emailError.textContent = "";
-    }
-})
-
-// Check length input user name
-username.addEventListener("input", function(){
-    if (username.value.length < 4) {
-        usernameError.textContent = "*Username must be at least 8 characters."
-    }else if(username.value.length > 20){
-        usernameError.textContent = "*Username must be less than 20 characters.";
-    }else {
-        usernameError.textContent = "";
-    }
-})
-
-// Check length input password
-password.addEventListener("input", function(){
-    if (password.value.length < 8) {
-        passwordError.textContent = "*Password must be at least 8 characters."
-    }else if(password.value.length > 20){
-        passwordError.textContent = "*Password must be less than 20 characters."
-    }else {
-        passwordError.textContent = "";
-    }
-})
-
+const registerForm = document.querySelector('.form-register');
+const regUsername = document.getElementById('username');
+const regEmail = document.getElementById('email');
+const regPassword = document.getElementById('password');
+const regError = document.getElementById('registration-error');
 
 // Check required fields
 function checkRequired(inputArr) {
-    let isRequired = false
-    inputArr.forEach(function(input) {
+    let isRequired = false;
+    inputArr.forEach(function (input) {
         if (input.value.trim() === '') {
-            showError(input, `*${getFieldName(input)} is required`)
-            isRequired = true
-        }else {
-            showSuccess(input)
+            showError(input, `${getFieldName(input)} is required`);
+            isRequired = true;
+        } else {
+            showSuccess(input);
         }
-    })
+    });
 
-    return isRequired
+    return isRequired;
 }
 
-// Get fieldname
-function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
-
-// Event listeners
-form.addEventListener('submit', function (e) {
-    e.preventDefault()
-
-    if (!checkRequired([username, email, password])) {
-        // checkLength(username, 3, 15)
-        // checkLength(password, 6, 25)
-        // checkEmail(email)
+// Check input length
+function checkLength(input, min, max) {
+    if (input.value.length < min) {
+        showError(input, `${getFieldName(input)} must be at least ${min} characters.`);
+    } else if (input.value.length > max) {
+        showError(input, `${getFieldName(input)} must be less than ${max} characters.`);
     }
-})
-
-// Check Login Error
-
-let lgForm = document.querySelector('.form-lg')
-let lgEmail = document.querySelector('.email-2')
-let lgEmailError = document.querySelector(".email-error-2")
-let lgPassword = document.querySelector('.password-2')
-let lgPasswordError = document.querySelector(".password-error-2")
-
-function showError2(input, message) {
-    const formControl2 = input.parentElement
-    formControl2.className = 'form-control2 error'
-    const small2 = formControl2.querySelector('small')
-    small2.innerText = message
-}
-
-function showSuccess2(input) {
-    const formControl2 = input.parentElement
-    formControl2.className = 'form-control2 success'
-    const small2 = formControl2.querySelector('small')
-    small2.innerText = '';
 }
 
 // Check email is valid
-function checkEmail2(lgEmail) {
-    const emailRegex2 = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
-    return emailRegex2.test(lgEmail);
+function checkEmail(input) {
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    if (!emailRegex.test(input.value.trim())) {
+        showError(input, "Email is not valid");
+    }
 }
 
-lgEmail.addEventListener("input", function(){
-    if (!checkEmail2(lgEmail.value)) {
-        lgEmailError.textContent = "*Email is not valid"
-    }else {
-        lgEmailError.textContent = "";
-    }
-})
+function showError(input, message) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control error';
+    const small = formControl.querySelector('small');
+    small.innerText = message;
+}
 
-// Check length input passwrod
-lgPassword.addEventListener("input", function(){
-    if (lgPassword.value.length < 8) {
-        lgPasswordError.textContent = "*Password must be at least 8 characters."
-    }else if (lgPassword.value.length > 20){
-        lgPasswordError.textContent = "*Password must be less than 20 characters."
-    }else {
-        lgPasswordError.textContent = "";
-    }
-})
+function showSuccess(input) {
+    const formControl = input.parentElement;
+    formControl.className = 'form-control success';
+    const small = formControl.querySelector('small');
+    small.innerText = '';
+}
 
-function checkRequiredLg(inputArr2) {
-    let isRequiredLg = false
-    inputArr2.forEach(function(input){
-        if (input.value.trim() === '') {
-            showError2(input, `*${getFieldNameLg(input)} Please enter your information in this field`)
-            isRequiredLg = true
-        }else {
-            showSuccess2(input)
+function getFieldName(input) {
+    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+}
+
+registerForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (!checkRequired([regUsername, regEmail, regPassword])) {
+        checkLength(regUsername, 4, 20);
+        checkEmail(regEmail);
+        checkLength(regPassword, 8, 20);
+
+        if (!regError.innerText) {
+            // If no errors, you can proceed to registration.
+            // You may call your registration function here.
+            registerUser(regUsername.value, regEmail.value, regPassword.value);
         }
-    })
-
-    return isRequiredLg
-}
-
-function getFieldNameLg(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1)
-}
-
-lgForm.addEventListener('submit', function (e){
-    e.preventDefault()
-
-    if (!checkRequiredLg([lgEmail, lgPassword])) {
-        checkEmail2(lgEmail)
     }
-})
+});
+
+// Check Login Error
+const loginForm = document.querySelector('.form-login');
+const lgEmail = document.getElementById('lgEmail');
+const lgPassword = document.getElementById('lgPassword');
+const lgError = document.getElementById('login-error');
+
+loginForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (lgEmail.value.trim() === '' || lgPassword.value.trim() === '') {
+        lgError.innerText = "Please enter your email and password.";
+    } else {
+        // If no errors, you can proceed to login.
+        // You may call your login function here.
+        loginUser(lgEmail.value, lgPassword.value);
+    }
+});
+
+// Hàm đăng ký
+function registerUser(username, email, password) {
+    // Tạo một đối tượng chứa dữ liệu người dùng
+    const userData = {
+        username: username,
+        email: email,
+        password: password
+    };
+
+    // Sử dụng Fetch API để gửi yêu cầu POST đến máy chủ
+    fetch('Register.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData) // Chuyển đối tượng dữ liệu thành chuỗi JSON
+    })
+        .then(response => response.json()) // Chuyển đổi phản hồi từ máy chủ thành đối tượng JSON
+        .then(data => {
+            if (data.message === 'Đăng ký thành công') {
+                // Đăng ký thành công, bạn có thể thực hiện các hành động sau đây
+                alert('Đăng ký thành công!');
+            } else {
+                // Đăng ký không thành công, hiển thị thông báo lỗi
+                alert('Lỗi khi đăng ký: ' + data.message);
+            }
+        })
+        .catch(error => {
+            // Xử lý lỗi nếu có
+            console.error('Lỗi:', error);
+        });
+}
+
+// Hàm đăng nhập
+function loginUser(email, password) {
+    // Tạo một đối tượng chứa dữ liệu người dùng
+    const loginData = {
+        email: email,
+        password: password
+    };
+
+    // Sử dụng Fetch API để gửi yêu cầu POST đến máy chủ
+    fetch('Login.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(loginData) // Chuyển đối tượng dữ liệu thành chuỗi JSON
+    })
+        .then(response => response.json()) // Chuyển đổi phản hồi từ máy chủ thành đối tượng JSON
+        .then(data => {
+            if (data.message === 'Đăng nhập thành công') {
+                // Đăng nhập thành công, bạn có thể thực hiện các hành động sau đây
+                alert('Đăng nhập thành công!');
+            } else {
+                // Đăng nhập không thành công, hiển thị thông báo lỗi
+                alert('Lỗi khi đăng nhập: ' + data.message);
+            }
+        })
+        .catch(error => {
+            // Xử lý lỗi nếu có
+            console.error('Lỗi:', error);
+        });
+}
