@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grocery Mart</title>
+
+        <!-- favicon -->
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="./assets/favicon/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./assets/favicon/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="./assets/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="./assets/favicon/site.webmanifest" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="./assets/fonts/stylesheet.css" />
+
+        <!-- Styles -->
+        <!-- <link rel="stylesheet" href="./assets/css/main.css" /> -->
+        <link rel="stylesheet" href="./assets/css/profile.css">
+
+        <!--Script  -->
+        <script src="./assets/js/scripts.js"></script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header id="header" class="header">
+            <script>
+                load("#header", "./templates/header.html");
+            </script>
+        </header>
+        
+        <div class="container">
+            <!-- Main -->
+            <div class="profile">
+                <div class="profile-tab">
+                    <div class="profile-tab-child">
+                        <div class="profile-tab-child_avt">
+                            <div class="profile-tab-child_avt_detail">
+                                <img src="./assets/img/profile_img/Ellipse-3.png" alt="">
+                                <div class="profile-tab-child_avt_detail_name">
+                                    <p>Imran Khan</p>
+                                    <p>Registered: 22th June 2023</p>
+                                </div>
+                            </div>
+                            <div class="bg-shadown"></div>
+                            <img src="./assets/img/profile_img/greens-background-plant-mint-wallpaper-preview.jpg" alt="" class="img-bg">
+                        </div>
+
+                        <div class="profile-tab-child_link">
+                            <div class="profile-tab-child_link_mana_acc profile_title">
+                                <p>Manage Account</p>
+                                <ul>
+                                    <li class="personal-link">
+                                        <img src="./assets/img/profile_img/Profile.svg" alt="">
+                                        <span class="personal-selected">Personal info</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/img/profile_img/Location.svg" alt="">
+                                        <span>Addresses</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/img/profile_img/Message.svg" alt="">
+                                        <span>Communications & privacy</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="profile-tab-child_link_my-items profile_title">
+                                <p>My items</p>
+                                <ul>
+                                    <li>
+                                        <img src="./assets/img/profile_img/Download.svg" alt="">
+                                        <span>Reorder</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/img/profile_img/love.svg" alt="">
+                                        <span>Lists</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/img/profile_img/gift.svg" alt="">
+                                        <span>Registries</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="profile-tab-child_link_sub profile_title">
+                                <p>Subscriptions & plans</p>
+                                <ul>
+                                    <li>
+                                        <img src="./assets/img/profile_img/ShieldDone.svg" alt="">
+                                        <span>Protection plans</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="profile-tab-child_link_service profile_title">
+                                <p>Customer Service</p>
+                                <ul>
+                                    <li>
+                                        <img src="./assets/img/profile_img/Inf-Square.svg" alt="">
+                                        <span>Help</span>
+                                    </li>
+                                    <li>
+                                        <img src="./assets/img/profile_img/DangerCircle.svg" alt="">
+                                        <span>Terms of Use</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="info-detail" style="display: block;" class="profile-detail">
+                    <div class="profile-detail__content">
+                        <div class="profile-detail__content__my-wallet">
+                            <div class="profile-detail__content__my-wallet__title">
+                                <p>My Wallet</p>
+                                <p>Payment methods</p>
+                            </div>
+
+                            <div class="profile-detail__content__my-wallet__card">  <!--Vung chua-->
+                                <div class="card_title">
+                                    <div class="bank_card">
+                                        <img src="./assets/img/profile_img/UH18SDOBirEAnXGl 1.svg" alt="">
+                                        <span>FeatherCard</span>
+                                    </div>
+                                    <img class="phane_icon" src="./assets/img/profile_img/test.svg" alt="">
+                                    <span id="id_card">1234 4567 8901 2221</span>
+                                    <img class="oval_icon" src="./assets/img/profile_img/Oval.svg" alt="">
+                                    <div class="card_title__holder">
+                                        <p>Card Holder</p>
+                                        <p>Imran Khan</p>
+                                    </div>
+                                    <div class="card_title__exp">
+                                        <p>Expired</p>
+                                        <p>12/01</p>
+                                    </div>
+                                </div>
+                                <div style="background: #354151;" class="card_title">
+                                    <div class="bank_card">
+                                        <img src="./assets/img/profile_img/UH18DBijRalPR3VT 1 (1).svg" alt="">
+                                        <span>FeatherCard</span>
+                                    </div>
+                                    <img style="width: 200px; height: 171px;left: 84px;" class="phane_icon" src="./assets/img/profile_img/UH18DBijRalPR3VT 1.svg" alt="">
+                                    <img class="oval_icon" src="./assets/img/profile_img/Oval.svg" alt="">
+                                    <span id="id_card">1234 4567 8901 2221</span>
+                                    <div class="card_title__holder">
+                                        <p>Card Holder</p>
+                                        <p>Imran Khan</p>
+                                    </div>
+                                    <div class="card_title__exp">
+                                        <p>Expired</p>
+                                        <p>06/22</p>
+                                    </div>
+                                </div>
+                                <div  class="card_blank">
+                                    <div class="card_blank__addToCard">
+                                        <img src="./assets/img/profile_img/Plus.svg" alt="">
+                                        <span>Add New Card</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-detail__content__acc-info">
+                            <div class="profile-detail__content__my-wallet__title">
+                                <p>Account info</p>
+                                <p>Addresses, contact information and password</p>
+                            </div>
+
+                            <div class="profile-detail__content__acc-info__detail">
+                                <div class="profile-detail__content__acc-info__detail__items">
+                                    <div class="bg-color-1">
+                                        <div class="profile-detail__content__acc-info__detail__items__email">
+                                            <div class="icon">
+                                                <img src="./assets/img/profile_img/Message.svg" alt="">
+                                            </div>
+                                            <div class="icon_title">
+                                                <p>Email Address</p>
+                                                <p>tarek97.ta@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="bg-color-1">
+                                        <div class="profile-detail__content__acc-info__detail__items__email">
+                                            <div class="icon">
+                                                <img src="./assets/img/profile_img/Calling.svg" alt="">
+                                            </div>
+                                            <div class="icon_title">
+                                                <p>Phone number</p>
+                                                <p>+000 11122 2345 657</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="profile-detail__content__acc-info__detail__items">
+                                    <div class="bg-color-1">
+                                        <div class="profile-detail__content__acc-info__detail__items__email">
+                                            <div class="icon">
+                                                <img src="./assets/img/profile_img/Location.svg" alt="">
+                                            </div>
+                                            <div class="icon_title">
+                                                <p>Add an address</p>
+                                                <p>Bangladesh Embassy, Washington, DC 20008</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile-detail__content__list">
+                            <div class="profile-detail__content__my-wallet__title">
+                                <p>Lists</p>
+                                <p>2 items - Primary</p>
+                            </div>
+
+                            <div class="profile-detail__content__list__items">
+                                <div class="profile-detail__content__list__items--1">
+                                    <div class="img-bg-items--1"></div>
+
+                                    <div class="product-name">
+                                        <p>Coffee Beans - Espresso Arabica and Robusta Beans</p>
+
+                                        <div class="price-card">
+                                            <span>$47.00</span>
+                                            <a href="">
+                                                <span>Add to cart</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="stock">
+                                <img src="./assets/img/profile_img/Stock.svg" alt="">
+                            </div>
+
+                            <div class="profile-detail__content__list__items">
+                                <div class="profile-detail__content__list__items--1">
+                                    <div class="img-bg-items--2"></div>
+
+                                    <div class="product-name">
+                                        <p>Lavazza Coffee Blends - Try the Italian Espresso</p>
+
+                                        <div class="price-card">
+                                            <span>$53.00</span>
+                                            <a href="">
+                                                <span>Add to cart</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="add-card" style="display: none; height: 643px;" class="profile-detail__add-card">
+                    <div class="profile-detail__add-card__content">
+                        <div class="profile-detail__add-card__content--form">
+                            <div class="profile-detail__add-card__content--form__title black-info-detail">
+                                <img src="./assets/img/profile_img/Arrow - Left.svg" alt="">
+                                <span>Add credit or debit card</span>
+                            </div>
+
+                            <div class="profile-detail__add-card__content--form__input">
+                                <div class="profile-detail__add-card__content--form__input--1">
+                                    <div class="input-title">
+                                        <span>First Name</span>   
+                                        <form action="">
+                                            <input placeholder="Imran" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>Card Information</span>   
+                                        <form action="">
+                                            <input placeholder="Card Number" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>CVV</span>   
+                                        <form action="">
+                                            <input placeholder="123" type="text">
+                                        </form> 
+                                    </div>
+                                </div>
+
+                                <div class="profile-detail__add-card__content--form__input--1">
+                                    <div class="input-title">
+                                        <span>Last Name</span>   
+                                        <form action="">
+                                            <input placeholder="Khan" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>Expiration Date</span>   
+                                        <form action="">
+                                            <input placeholder="MM/YY" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>Phone Number</span>   
+                                        <form action="">
+                                            <input placeholder="(415) 555‑0132" type="text">
+                                        </form> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-detail__add-card__content--form__preferences">
+                                <p>Card Preferences</p>  
+                                <form action="">
+                                    <input type="checkbox" id="myCheckbox" name="myCheckbox" value="option1">
+                                    <label for="myCheckbox">Set as default card</label>
+                                </form> 
+                            </div>
+
+                            <div class="profile-detail__add-card__content--form__confirm">
+                                <span id="btn-cancel">Cancel</span>
+                                <a href="">
+                                    <span>Save Card</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="personal-tab" style="height: 424px;display: none;"  class="profile-detail__personal-info">
+                    <div class="profile-detail__personal-info__content">
+                        <div class="profile-detail__personal-info__content--form">
+                            <div class="profile-detail__personal-info__content--form__title back-profile">
+                                <img src="./assets/img/profile_img/Arrow - Left.svg" alt="">
+                                <span>Personal info</span>
+                            </div>
+
+                            <div class="profile-detail__personal-info__content--form__input">
+                                <div class="profile-detail__personal-info__content--form__input--1">
+                                    <div class="input-title">
+                                        <span>Full Name</span>   
+                                        <form action="">
+                                            <input placeholder="Imran Khan" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>Phone number</span>   
+                                        <form action="">
+                                            <input placeholder="+008 01234 56789" type="text">
+                                        </form> 
+                                    </div>
+                                </div>
+
+                                <div class="profile-detail__personal-info__content--form__input--1">
+                                    <div class="input-title">
+                                        <span>Email address</span>   
+                                        <form action="">
+                                            <input placeholder="admin@uihut.com" type="text">
+                                        </form> 
+                                    </div>
+                                    <div class="input-title">
+                                        <span>Password</span>   
+                                        <form action="">
+                                            <input placeholder="•••••••••" type="password">
+                                        </form> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="profile-detail__personal-info__content--form__confirm">
+                                <span id="btn-cancel-personal">Cancel</span>
+                                <a href="">
+                                    <span>Save Edit</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+       <!-- Footer -->
+       <footer id="footer" class="footer"></footer>
+       <script>
+           load("#footer", "./templates/footer.html");
+       </script>
+        <script src="./assets/js/profile.js"></script>
+    </body>
+</html>
