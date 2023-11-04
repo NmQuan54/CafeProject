@@ -18,6 +18,11 @@ html.dark {
         --header-shadow-color: rgba(0, 0, 0, 0.2);
     }
 
+    // Header
+    --header-act-dropdown-bg: #2f3441;
+    --header-act-dropdown-shadow: rgba(23, 28, 40, 0.4);
+    --header-act-dropdown-border-color: #171c28;
+
     // Dropdown
     --dropdown-bg-color: #2f3441;
     --dropdown-shadow-color: rgba(23, 28, 40, 0.4);
@@ -47,7 +52,7 @@ html.dark {
     // Filter form
     --filter-form-bg: var(--dropdown-bg-color);
     --filter-form-shadow: rgba(0, 0, 0, 0.4);
-    --filter-form-tag-bg: #171c28;
+    --form-tag-bg: #171c28;
     --filter-form-arrow: var(--dropdown-arrow-color);
 
     // Auth
@@ -58,11 +63,48 @@ html.dark {
 
     // Forms
     --form-placeholder-color: #b9babe;
+    --form-select-dialog-shadow: rgba($color: #fff, $alpha: 0.15);
+    --form-select-dialog-bg: #2f3441;
+    --form-option-hover-bg: #292e39;
 
     // Product detail
     --product-detail-bg: #292e39;
+    --product-detail-info-bg: #171c28;
+    --product-detail-info-content-bg: transparent;
+    --product-detail-tag-bg: #292e39;
+
+    @include abstracts.screen(md) {
+        --product-detail-bg: #292e39;
+        --product-detail-info-bg: transparent;
+        --product-detail-info-content-bg: #171c28;
+    }
 
     // Breadcrumbs
-    --breadcrmbs-bg: #171c28;
-    --breadcrmbs-shadow: rgba(23, 28, 40, 0.2);
+    --breadcrumbs-bg: #171c28;
+    --breadcrumbs-shadow: rgba(23, 28, 40, 0.2);
+
+    @include abstracts.screen(md) {
+        --breadcrumbs-bg: #171c28;
+    }
+
+    // Search bar
+    --search-bar-bg: #171c28;
+
+    // Review card
+    --review-card-bg: #171c28;
+
+    // Text content
+    --text-content-hr-bg: #3e4043;
+
+    // Checkout
+    --checkout-breadcrumbs-bg: #171c28;
+    --checkout-cart-info-bg: #171c28;
+    --checkout-cart-info-shadow: rgba(23, 28, 40, 0.2);
+    --checkout-border-color: #292e39;
+    --checkout-gift-shadow: rgba(23, 28, 40, 0.2);
+    --checkout-payment-item-bg: #292e39;
+
+    // Dialog
+    --dialog-bg: #2f3441;
+    --dialog-shadow: rgba(23, 28, 40, 0.4);
 }
