@@ -45,7 +45,7 @@
     >
     <div class="container" id="container">
         <!-- Biểu mẫu đăng ký -->
-        <form action="includes/Register.php" method="post" class="form-container register-container">
+        <form action="Register.php" method="post" class="form-container register-container">
             <h1>Register here</h1>
             <div class="form-control">
                 <input type="text" id="username" name="username" placeholder="Name" />
@@ -57,6 +57,7 @@
                 <small id="email-error"></small>
                 <span></span>
             </div>
+            <div id="duplicate-error" style="color: red;"></div>
             <div class="form-control">
                 <input type="password" id="password" name="password" placeholder="Password" />
                 <small id="password-error"></small>
@@ -69,18 +70,19 @@
                 <a href="#" class="social"><i class="fa-brands fa-google"></i></a>
                 <a href="#" class="social"><i class="fa-brands fa-tiktok"></i></a>
             </div>
+
         </form>
 
         <!-- Biểu mẫu đăng nhập -->
-        <form action="includes/Login.php" method="post" class="form-container login-container">
+        <form action="Login.php" method="post" class="form-container login-container">
             <h1>Login here.</h1>
             <div class="form-control2">
-                <input type="email" class="email-2" placeholder="Email" />
+                <input type="email" name="email" class="email-2" placeholder="Email" />
                 <small class="email-error-2"></small>
                 <span></span>
             </div>
             <div class="form-control2">
-                <input type="password" class="password-2" placeholder="Password" />
+                <input type="password" name="password" class="password-2" placeholder="Password" />
                 <small class="password-error-2"></small>
                 <span></span>
             </div>
