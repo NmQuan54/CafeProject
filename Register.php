@@ -30,18 +30,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("sss", $username,$email, $password);
 
     if ($stmt->execute()) {
-        // Đăng ký thành công
-        echo "Đăng ký thành công!";
-        // Hoặc trả về thông báo JSON cho giao diện (nếu cần)
-
-        // Ví dụ: Trả về JSON
-        // $response = ["message" => "Đăng ký thành công"];
-        // header("Content-type: application/json");
-        // echo json_encode($response);
+        echo "<script>alert('Đăng ký thành công');</script>";
+        header("Location: ValidateForm.html");
     } else {
         // Xử lý lỗi
         echo "Lỗi khi đăng ký: " . $stmt->error;
     }
+
 
     // Đóng prepared statement
     $stmt->close();
