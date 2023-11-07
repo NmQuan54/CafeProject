@@ -1736,9 +1736,20 @@ html {
   cursor: pointer;
 }
 .top-act__title {
-  font-size: 1.5rem;
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  font-size: 1.3rem;
   font-weight: 500;
-  line-height: 146.667%;
+  line-height: 75%;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(0, 213, 255);
+  color: white;
+  padding: 2px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }
 .top-act__separate {
   width: 1px;
@@ -2851,6 +2862,7 @@ html {
 }
 
 .dropdown {
+  z-index: 999;
   position: absolute;
   left: 0;
   width: min(1240px, 100%);
