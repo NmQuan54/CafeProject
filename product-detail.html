@@ -180,9 +180,9 @@
                                                     </div>
                                                     <p class="prod-info__total-price">$540.00</p>
                                                     <div class="prod-info__row">
-                                                        <button class="btn btn--primary prod-info__add-to-cart">
+                                                        <div class="btn btn--primary prod-info__add-to-cart">
                                                             Add to cart
-                                                        </button>
+                                                        </div>
                                                         <button class="like-btn prod-info__like-btn">
                                                             <img
                                                                 src="./assets/icons/heart.svg"
@@ -741,4 +741,32 @@
             load("#footer", "./templates/footer.html");
         </script>
     </body>
+    <script>
+        let cart = []; // Mảng chứa các sản phẩm trong giỏ hàng
+
+        const addToCartButtons = document.querySelectorAll(".prod-info__add-to-cart");
+        const shoppingCartItemCount = document.querySelector(".top-act__shopping"); // Phần tử chứa số lượng sản phẩm trong giỏ hàng
+        let cartItemCount = 0; // Số lượng sản phẩm trong giỏ hàng
+
+        addToCartButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                // Lấy thông tin sản phẩm tương ứng với nút đã click
+                const productPrice = 500.0; // Thay đổi giá sản phẩm tương ứng
+                const productName = "Sản phẩm A"; // Thay đổi tên sản phẩm tương ứng
+
+                // Tạo một đối tượng sản phẩm
+                const product = {
+                    name: productName,
+                    price: productPrice,
+                };
+
+                // Thêm sản phẩm vào giỏ hàng
+                cart.push(product);
+
+                // Cập nhật số lượng sản phẩm trong giỏ hàng
+                cartItemCount++;
+                shoppingCartItemCount.textContent = cartItemCount;
+            });
+        });
+    </script>
 </html>

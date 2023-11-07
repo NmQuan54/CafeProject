@@ -22,6 +22,23 @@
         <!-- Scripts -->
         <script src="./assets/js/scripts.js"></script>
     </head>
+
+    <script>
+        // Hàm để khôi phục trạng thái giỏ hàng từ localStorage
+        function loadCartFromLocalStorage() {
+            const cartData = localStorage.getItem("cart");
+            if (cartData) {
+                cart = JSON.parse(cartData);
+                cartItemCount = cart.length;
+            }
+        }
+
+        // Gọi hàm để khôi phục giỏ hàng khi trang được tải lại
+        loadCartFromLocalStorage();
+
+        // Cập nhật số lượng sản phẩm trong phần tử "top-act__shopping"
+        shoppingCartItemCount.textContent = cartItemCount;
+    </script>
     <body>
         <!-- Header -->
         <header id="header" class="header"></header>
@@ -235,295 +252,7 @@
                     </div>
                 </div>
 
-                <div class="row row-cols-4 row-cols-lg-2 row-cols-sm-1 g-3">
-                    <!-- Product card 1 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-1.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Coffee Beans - Espresso Arabica and Robusta Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$47.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.3</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 2 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-2.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza Coffee Blends - Try the Italian Espresso</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$53.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">3.4</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 3 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-3.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn like-btn--liked product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza - Caffè Espresso Black Tin - Ground coffee</a>
-                            </h3>
-                            <p class="product-card__brand">Welikecoffee</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$99.99</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">5.0</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 4 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-4.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Qualità Oro Mountain Grown - Espresso Coffee Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$38.65</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.4</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 5 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-1.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Coffee Beans - Espresso Arabica and Robusta Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$47.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.3</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 6 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-2.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza Coffee Blends - Try the Italian Espresso</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$53.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">3.4</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 7 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-3.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn like-btn--liked product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza - Caffè Espresso Black Tin - Ground coffee</a>
-                            </h3>
-                            <p class="product-card__brand">Welikecoffee</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$99.99</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">5.0</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 8 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-4.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Qualità Oro Mountain Grown - Espresso Coffee Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$38.65</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.4</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 9 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-1.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Coffee Beans - Espresso Arabica and Robusta Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$47.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.3</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 10 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-2.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza Coffee Blends - Try the Italian Espresso</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$53.00</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">3.4</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 11 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-3.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn like-btn--liked product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Lavazza - Caffè Espresso Black Tin - Ground coffee</a>
-                            </h3>
-                            <p class="product-card__brand">Welikecoffee</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$99.99</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">5.0</span>
-                            </div>
-                        </article>
-                    </div>
-
-                    <!-- Product card 12 -->
-                    <div class="col">
-                        <article class="product-card">
-                            <div class="product-card__img-wrap">
-                                <a href="./product-detail.html">
-                                    <img src="./assets/img/product/item-4.png" alt="" class="product-card__thumb" />
-                                </a>
-                                <button class="like-btn product-card__like-btn">
-                                    <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
-                                    <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
-                                </button>
-                            </div>
-                            <h3 class="product-card__title">
-                                <a href="./product-detail.html">Qualità Oro Mountain Grown - Espresso Coffee Beans</a>
-                            </h3>
-                            <p class="product-card__brand">Lavazza</p>
-                            <div class="product-card__row">
-                                <span class="product-card__price">$38.65</span>
-                                <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
-                                <span class="product-card__score">4.4</span>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+                <div class="row-listproduct row  row-cols-4 row-cols-lg-2 row-cols-sm-1 g-3"></div>
             </section>
         </main>
 
@@ -531,6 +260,128 @@
         <footer id="footer" class="footer"></footer>
         <script>
             load("#footer", "./templates/footer.html");
+        </script>
+        <script>
+            // Dữ liệu về các sản phẩm
+            const products = [
+                {
+                    name: "Coffee Beans - Espresso Arabica and Robusta Beans",
+                    brand: "Lavazza",
+                    price: 47.0,
+                    image: "./assets/img/product/item-1.png",
+                    starRating: 4.3,
+                },
+                {
+                    name: "Lavazza Coffee Blends - Try the Italian Espresso",
+                    brand: "Lavazza",
+                    price: 53.0,
+                    image: "./assets/img/product/item-2.png",
+                    starRating: 3.4,
+                },
+                {
+                    name: "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+                    brand: "Welikecoffee",
+                    price: 99.99,
+                    image: "./assets/img/product/item-3.png",
+                    starRating: 5.0,
+                },
+                {
+                    name: "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+                    brand: "Lavazza",
+                    price: 38.65,
+                    image: "./assets/img/product/item-4.png",
+                    starRating: 4.4,
+                },
+
+                {
+                    name: "Coffee Beans - Espresso Arabica and Robusta Beans",
+                    brand: "Lavazza",
+                    price: 47.0,
+                    image: "./assets/img/product/item-1.png",
+                    starRating: 4.3,
+                },
+                {
+                    name: "Lavazza Coffee Blends - Try the Italian Espresso",
+                    brand: "Lavazza",
+                    price: 53.0,
+                    image: "./assets/img/product/item-2.png",
+                    starRating: 3.4,
+                },
+                {
+                    name: "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+                    brand: "Welikecoffee",
+                    price: 99.99,
+                    image: "./assets/img/product/item-3.png",
+                    starRating: 5.0,
+                },
+                {
+                    name: "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+                    brand: "Lavazza",
+                    price: 38.65,
+                    image: "./assets/img/product/item-4.png",
+                    starRating: 4.4,
+                },
+
+                {
+                    name: "Coffee Beans - Espresso Arabica and Robusta Beans",
+                    brand: "Lavazza",
+                    price: 47.0,
+                    image: "./assets/img/product/item-1.png",
+                    starRating: 4.3,
+                },
+                {
+                    name: "Lavazza Coffee Blends - Try the Italian Espresso",
+                    brand: "Lavazza",
+                    price: 53.0,
+                    image: "./assets/img/product/item-2.png",
+                    starRating: 3.4,
+                },
+                {
+                    name: "Lavazza - Caffè Espresso Black Tin - Ground coffee",
+                    brand: "Welikecoffee",
+                    price: 99.99,
+                    image: "./assets/img/product/item-3.png",
+                    starRating: 5.0,
+                },
+                {
+                    name: "Qualità Oro Mountain Grown - Espresso Coffee Beans",
+                    brand: "Lavazza",
+                    price: 38.65,
+                    image: "./assets/img/product/item-4.png",
+                    starRating: 4.4,
+                },
+            ];
+
+            // Tạo sản phẩm và thêm vào trang HTML
+            const productContainer = document.querySelector(".row-listproduct");
+
+            products.forEach((product) => {
+                const article = document.createElement("article");
+                article.className = "product-card";
+
+                article.innerHTML = `
+        <div class="product-card__img-wrap">
+            <a href="./product-detail.html">
+                <img src="${product.image}" alt="" class="product-card__thumb" />
+            </a>
+            <button class="like-btn product-card__like-btn">
+                <img src="./assets/icons/heart.svg" alt="" class="like-btn__icon icon" />
+                <img src="./assets/icons/heart-red.svg" alt="" class="like-btn__icon--liked" />
+            </button>
+        </div>
+        <h3 class="product-card__title">
+            <a href="./product-detail.html">${product.name}</a>
+        </h3>
+        <p class="product-card__brand">${product.brand}</p>
+        <div class="product-card__row">
+            <span class="product-card__price">$${product.price.toFixed(2)}</span>
+            <img src="./assets/icons/star.svg" alt="" class="product-card__star" />
+            <span class="product-card__score">${product.starRating}</span>
+        </div>
+    `;
+
+                productContainer.appendChild(article);
+            });
         </script>
     </body>
 </html>
