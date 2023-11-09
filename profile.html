@@ -34,6 +34,8 @@
         <!-- Styles -->
         <!-- <link rel="stylesheet" href="./assets/css/main.css" /> -->
         <link rel="stylesheet" href="./assets/css/profile.css">
+        <!--Link thu vien font-awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
         <!--Script  -->
         <script src="./assets/js/scripts.js"></script>
@@ -300,6 +302,25 @@
                     <button id="logoutButton" class="btn-log-out">Logout</button>
                 </div>
 
+                <div id="toast">
+                    <!-- <div class="toast toast--success">
+                        <div class="toast__icon ">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                        <div class="toast__body">
+                            <h3 class="toast__title">
+                                info
+                            </h3>
+                            <p class="toast__message">
+                                Lmao
+                            </p>
+                        </div>
+                        <div class="toast__close">
+                            <i class="fa-regular fa-circle-xmark"></i>
+                        </div>
+                    </div> -->
+                </div>
+
                 <div id="add-card" style="display: none; height: 643px;" class="profile-detail__add-card">
                     <div class="profile-detail__add-card__content">
                         <div class="profile-detail__add-card__content--form">
@@ -386,7 +407,7 @@
                                         <div class="input-title">
                                             <span>Full Name</span>   
                                             <form id="check-valid1" action="">
-                                                <input required pattern="[a-zA-Z0-9]+" id="name-text" placeholder="Imran Khan" type="text">
+                                                <input required pattern="^[A-Za-z\s\-']+$" id="name-text" placeholder="Imran Khan" type="text">
                                             </form> 
                                         </div>
                                         <div class="input-title">
