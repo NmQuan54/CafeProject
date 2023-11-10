@@ -190,24 +190,107 @@ window.addEventListener("template-loaded", () => {
     });
 });
 
-window.addEventListener("template-loaded", () => {
-    const tabsSelector = "prod-tab__item";
-    const contentsSelector = "prod-tab__content";
+function toggleImage() {
+    var moonImage = document.getElementById("moon");
+    var sunImage = document.getElementById("sun");
 
-    const tabActive = `${tabsSelector}--current`;
-    const contentActive = `${contentsSelector}--current`;
+    // Kiểm tra trạng thái hiển thị của ảnh moon
+    if (moonImage.style.display !== "none") {
+        // Nếu ảnh moon đang hiển thị, ẩn nó và hiển thị ảnh sun
+        moonImage.style.display = "none";
+        sunImage.style.display = "inline";
+    } else {
+        // Ngược lại, ẩn ảnh sun và hiển thị ảnh moon
+        moonImage.style.display = "inline";
+        sunImage.style.display = "none";
+    }
+}
 
-    const tabContainers = $$(".js-tabs");
-    tabContainers.forEach((tabContainer) => {
-        const tabs = tabContainer.querySelectorAll(`.${tabsSelector}`);
-        const contents = tabContainer.querySelectorAll(`.${contentsSelector}`);
-        tabs.forEach((tab, index) => {
-            tab.onclick = () => {
-                tabContainer.querySelector(`.${tabActive}`)?.classList.remove(tabActive);
-                tabContainer.querySelector(`.${contentActive}`)?.classList.remove(contentActive);
-                tab.classList.add(tabActive);
-                contents[index].classList.add(contentActive);
-            };
-        });
-    });
-});
+function toggleImage() {
+    var moonImage = document.getElementById("moon");
+    var sunImage = document.getElementById("sun");
+    var body = document.body;
+
+    // Kiểm tra trạng thái hiển thị của ảnh moon
+    if (moonImage.style.display !== "none") {
+        // Nếu ảnh moon đang hiển thị, ẩn nó và hiển thị ảnh sun
+        moonImage.style.display = "none";
+        sunImage.style.display = "inline";
+
+        // Chuyển giao diện sang chế độ sáng
+        body.classList.remove("html.dark");
+    } else {
+        // Ngược lại, ẩn ảnh sun và hiển thị ảnh moon
+        moonImage.style.display = "inline";
+        sunImage.style.display = "none";
+
+        // Chuyển giao diện sang chế độ tối
+        body.classList.add("html.dark");
+    }
+}
+
+// function toggleImage() {
+//     var moonImage = document.getElementById("moon");
+//     var sunImage = document.getElementById("sun");
+//     var htmlElement = document.documentElement;
+
+//     // Kiểm tra trạng thái hiển thị của ảnh moon
+//     if (moonImage.style.display !== "none") {
+//         // Nếu ảnh moon đang hiển thị, ẩn nó và hiển thị ảnh sun
+//         moonImage.style.display = "none";
+//         sunImage.style.display = "inline";
+
+//         // Chuyển giao diện sang chế độ sáng với độ trễ 1 giây
+//         setTimeout(function () {
+//             htmlElement.classList.remove("dark");
+//         }, 300);
+//     } else {
+//         // Ngược lại, ẩn ảnh sun và hiển thị ảnh moon
+//         moonImage.style.display = "inline";
+//         sunImage.style.display = "none";
+
+//         // Chuyển giao diện sang chế độ tối với độ trễ 1 giây
+//         setTimeout(function () {
+//             htmlElement.classList.add("dark");
+//         }, 300);
+//     }
+// }
+// Đọc trạng thái đã lưu từ localStorage
+var isDarkMode = localStorage.getItem("darkMode") === "true";
+var htmlElement = document.documentElement;
+
+// Áp dụng trạng thái đọc được
+if (isDarkMode) {
+    htmlElement.classList.add("dark");
+}
+
+function toggleImage() {
+    var moonImage = document.getElementById("moon");
+    var sunImage = document.getElementById("sun");
+    var isDarkMode = htmlElement.classList.contains("dark");
+
+    // Kiểm tra trạng thái hiển thị của ảnh moon
+    if (isDarkMode) {
+        // Nếu ảnh moon đang hiển thị, ẩn nó và hiển thị ảnh sun
+        moonImage.style.display = "none";
+        sunImage.style.display = "inline";
+
+        // Chuyển giao diện sang chế độ sáng với độ trễ 0.3 giây
+        setTimeout(function () {
+            htmlElement.classList.remove("dark");
+            // Lưu trạng thái vào localStorage
+            localStorage.setItem("darkMode", "false");
+        }, 300);
+    } else {
+        // Ngược lại, ẩn ảnh sun và hiển thị ảnh moon
+        moonImage.style.display = "inline";
+        sunImage.style.display = "none";
+
+        // Chuyển giao diện sang chế độ tối với độ trễ 0.3 giây
+        setTimeout(function () {
+            htmlElement.classList.add("dark");
+            // Lưu trạng thái vào localStorage
+            localStorage.setItem("darkMode", "true");
+        }, 300);
+    }
+}
